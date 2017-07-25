@@ -1,1 +1,1 @@
-# Vertex-to-Vertex-Distance-Oracle-on-Terrain-Surface
+# Distance-Oracle-on-Terrain-Surface
