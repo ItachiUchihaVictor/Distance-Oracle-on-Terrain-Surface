@@ -52,25 +52,49 @@ inline bool read_mesh_from_file(char* filename,
 	std::ifstream file(filename);
 	assert(file.is_open());
 	if(!file.is_open()) return false;
-	
+    std::string dum;
+    unsigned num_edges;
+    file >> dum; 
+    std::cout << dum;   
 	unsigned num_points;
 	file >> num_points;
 	assert(num_points>=3);
     
 	unsigned num_faces;
 	file >> num_faces;
+    file >> num_edges;
     
+//    std::cout << num_points << " " << num_faces << std::endl; 
+    unsigned dummy;
 	points.resize(num_points*3);
 	for(typename Points::iterator i=points.begin(); i!=points.end(); ++i)
 	{
 		file >> *i;
+     //   std::cout << *i << std::endl;
 	}
 
 	faces.resize(num_faces*3);
-	for(typename Faces::iterator i=faces.begin(); i!=faces.end(); ++i)
+    unsigned linenum = 0;
+/*	for(typename Faces::iterator i=faces.begin(); i!=faces.end(); ++i)
 	{
-		file >> *i;
-	}
+	    if(linenum%3==0){
+            file >> dummy;
+            linenum++;
+            std::cout << std::endl << dummy;
+        }
+       file >> *i;
+       
+       std::cout << " " << *i;
+	}*/
+
+    for(int i=0;i<faces.size();i++){
+        if(i%3==0){
+            file >> dummy;
+            std::cout << std::endl << dummy;
+        }
+        file >> faces[i];
+        std::cout << " " << faces[i];
+    }
 	file.close();
 
 	return true;
