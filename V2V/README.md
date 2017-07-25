@@ -29,3 +29,11 @@ An example:
 main small_terrain.off 8
 
 In this example, samll_terrain.off is the terrain data file and 8 is the separation factor and the error bound e is equal to 0.25.
+
+# Experimental Result
+
+The program will save result in a file "data-file-name.txt". 
+
+The result contains "error bound" "preprocessing time (seconds)" "query time (micor seconds)" "space (MB)" "error". 
+
+In the aforementioned example, the result file is "small_terrain.off.txt".
