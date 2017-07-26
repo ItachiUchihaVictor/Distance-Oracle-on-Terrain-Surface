@@ -20,6 +20,6 @@ In this example, samll_terrain.off is the terrain data file.
 
 # Ourput
 
-The program will save the output in a file "newterrain.txt". 
+The program will save the output in a file "newterrain.off". 
 
 
