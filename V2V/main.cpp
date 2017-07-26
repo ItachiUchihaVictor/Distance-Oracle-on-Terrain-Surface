@@ -468,6 +468,7 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
 //#endif
        }
        errorbound_dis/=qtimes;
+       Time_dquery/=qtimes;
     //   errorbound_knn/=qtimes;
 //       fp=fopen("output.txt","a");
 //      fprintf(fp,"%f %f %f %f %f %f %f %f\n",Time_preprocess,Time_dquery, Space_query, errorbound_dis); 
