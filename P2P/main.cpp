@@ -469,6 +469,7 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
 #endif
        }
        errorbound_dis/=qtimes;
+       Time_dquery/=qtimes;
 //       errorbound_knn/=qtimes;
 
        std::ofstream disquerytime(std::string(prefix) + ".txt", std::ios::out | std::ios::app );
