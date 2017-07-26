@@ -90,10 +90,10 @@ inline bool read_mesh_from_file(char* filename,
     for(int i=0;i<faces.size();i++){
         if(i%3==0){
             file >> dummy;
-            std::cout << std::endl << dummy;
+  //          std::cout << std::endl << dummy;
         }
         file >> faces[i];
-        std::cout << " " << faces[i];
+//        std::cout << " " << faces[i];
     }
 	file.close();
 

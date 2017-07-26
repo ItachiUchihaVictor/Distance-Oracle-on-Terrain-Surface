@@ -402,6 +402,9 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
            double posX2 = mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
            double posY2 = mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
         //tml::qtree<float, int> tree(mesh.m_xmin, mesh.m_ymin, mesh.m_xmin+mesh.m_width, mesh.m_ymin+mesh.m_height);
+#ifndef WIN32
+       getrusage(RUSAGE_SELF,&myTime_query_begin);
+#endif
        int qindex1; //=randn(geonodevector.size());
        double NNradius = mesh.shortest_edge;
         const tml::qtree<float, int>::node_type *NNnode = NULL;
@@ -430,9 +433,6 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
  * Distance Query
  * */
 
-#ifndef WIN32
-       getrusage(RUSAGE_SELF,&myTime_query_begin);
-#endif
 
        double distance_return=distance_geo(geonodevector[qindex1], geonodevector[qindex2]); 
        std::cout<<"distance_return:"<<distance_return<<std::endl;
