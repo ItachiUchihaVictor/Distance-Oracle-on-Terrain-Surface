@@ -1,4 +1,4 @@
-e# Point-to-Point Distance Oracle on Terrain Surface
+# K-Algorithm 
 
 The main source code is main.cpp. 
 
@@ -45,3 +45,8 @@ The result contains "error bound" "query time (micro seconds)"  "error".
 
 In the aforementioned example, the result file is "small_terrain.off_mano.txt".
 
+# Reference
+
+"New lower and upper bounds for shortest distance queries on terrains", 
+M Kaul, RCW Wong, CS Jensen, 
+VLDB 2016
