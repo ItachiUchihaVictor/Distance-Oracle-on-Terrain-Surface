@@ -1,6 +1,6 @@
-# Point-to-Point Distance Oracle on Terrain Surface (Baseline: SE-naive)
+# Point-to-Point Distance Oracle on Terrain Surface (SE-naive)
 
-The main source code is main.cpp. 
+The main source code is main.cpp. This is the implementation of a baseline algorithm SE-naive in our paper.
 
 # Compiling Command
 
