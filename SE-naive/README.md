@@ -40,9 +40,9 @@ the number of POIs
 
 # Experimental Result
 
-The program will save result in a file "data-file-name.txt". 
+The program will save result in a file "data-file-name_SE-naive.txt". 
 
 The result contains "error bound" "preprocessing time (seconds)" "query time (micor seconds)" "space (MB)" "error". 
 
-In the aforementioned example, the result file is "small_terrain.off.txt".
+In the aforementioned example, the result file is "small_terrain.off_SE-naive.txt".
 
