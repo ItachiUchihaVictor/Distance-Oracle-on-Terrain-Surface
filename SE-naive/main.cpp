@@ -473,7 +473,7 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
 //       errorbound_knn/=qtimes;
 
        std::ofstream disquerytime(std::string(prefix) + "_SE-naive.txt", std::ios::out | std::ios::app );
-        disquerytime << s << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
+        disquerytime << 2.0/s << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
      //  fp=fopen("output.txt","a");
     //  fprintf(fp,"%f %f %f %f %f %f %f %f\n",Time_preprocess,Time_dquery, Time_knnquery, Time_clpquery, Space_preprocess, Space_query, errorbound_dis, errorbound_knn); 
 //       fclose(fp); 
