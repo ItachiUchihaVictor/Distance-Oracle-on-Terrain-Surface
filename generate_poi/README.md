@@ -28,6 +28,8 @@ The program will output a file "1000.txt" containing the x and y coordinates of 
 The format of the xycoor.txt and 1000.txt
 
 "Latitude of the 1st POI" "Longitude of the 1st POI"
+
 "Latitude of the 2nd POI" "Longitude of the 2nd POI"
+
 ......
 
