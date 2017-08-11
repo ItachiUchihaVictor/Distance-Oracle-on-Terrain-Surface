@@ -19,10 +19,12 @@ main small_terrain.off xycoor.txt newterrain.off poilist.txt
 
 In this example, samll_terrain.off is the input terrain data file, xycoor.txt is a listing containing x and y coodinates of all POIs, newterrain.off is the output terrain data with POIs inserted and poilist.txt is a list containing the indexes of all POIs in the new terrain data. 
 
-The format of the xycoor.txt
+The format of the xycoor.txt:
 
 "Latitude of the 1st POI" "Longitude of the 1st POI"
+
 "Latitude of the 2nd POI" "Longitude of the 2nd POI"
+
 ......
 
 The format of the poilist.txt: 
