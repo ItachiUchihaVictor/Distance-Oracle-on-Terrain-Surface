@@ -25,7 +25,7 @@ and 1000 is the number of POIs to be generated.
 
 The program will output a file "1000.txt" containing the x and y coordinates of all generated POIs. 
 
-The format of the xycoor.txt and 1000.txt
+The format of the xycoor.txt and 1000.txt:
 
 "Latitude of the 1st POI" "Longitude of the 1st POI"
 
