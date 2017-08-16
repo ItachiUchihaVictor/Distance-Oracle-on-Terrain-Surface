@@ -1,10 +1,13 @@
 #include "distance.h"
+#include "timer.h"
 #include<sstream>
 #include<unistd.h>
 #include <sys/resource.h>
 #include <sys/times.h>
 #include <iostream>
 #include <sstream>
+#include<climits>
+#include<iomanip>
 #include "geodesic_algorithm_subdivision.h"
 #define qtimes 100
 //-------------------------------------
@@ -408,16 +411,17 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
  * Distance Query
  * */
 
-#ifndef WIN32
+/*#ifndef WIN32
        getrusage(RUSAGE_SELF,&myTime_query_begin);
-#endif
-        
+#endif*/
+        Time_dquery-=get_micro_time();
        double distance_return=distance_geo(geonodevector[qindex1], geonodevector[qindex2]); 
        std::cout<<"distance_return:"<<distance_return<<std::endl;
-#ifndef WIN32
+/*#ifndef WIN32
        getrusage(RUSAGE_SELF,&myTime_query_end);
        Time_dquery+=myTime_query_end.ru_utime.tv_usec-myTime_query_begin.ru_utime.tv_usec;
-#endif
+#endif*/
+       Time_dquery+=get_micro_time();
        if(distance_return == 0) continue;
        double realdistance;
        realdistance=distance_geo(*geonodevector[qindex1],*geonodevector[qindex2],algorithm);
@@ -463,17 +467,17 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
            qindex2=(qindex2+1)%geonodevector.size();
        }*/
    //    k_closest_pairs(v1,v2,k);
-#ifndef WIN32
-       getrusage(RUSAGE_SELF,&myTime_query_end);
+//#ifndef WIN32
+//       getrusage(RUSAGE_SELF,&myTime_query_end);
 //       Time_clpquery+=myTime_query_end.ru_utime.tv_usec-myTime_query_begin.ru_utime.tv_usec;
-#endif
+//#endif
        }
        errorbound_dis/=qtimes;
        Time_dquery/=qtimes;
 //       errorbound_knn/=qtimes;
 
-       std::ofstream disquerytime(std::string(prefix) + ".txt", std::ios::out | std::ios::app );
-        disquerytime << 2.0/s << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
+       std::ofstream disquerytime("SE.txt", std::ios::out | std::ios::app );
+        disquerytime << 2.0/s << " " << num_poi << " "  << Time_preprocess << " " << std::setprecision(10) <<  Time_dquery << std::setprecision(10) << " " << Space_query << " " << errorbound_dis << std::endl; 
      //  fp=fopen("output.txt","a");
     //  fprintf(fp,"%f %f %f %f %f %f %f %f\n",Time_preprocess,Time_dquery, Time_knnquery, Time_clpquery, Space_preprocess, Space_query, errorbound_dis, errorbound_knn); 
 //       fclose(fp); 
