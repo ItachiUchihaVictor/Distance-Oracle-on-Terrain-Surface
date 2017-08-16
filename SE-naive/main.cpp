@@ -1,4 +1,5 @@
 #include "distance.h"
+#include "timer.h"
 #include<sstream>
 #include<unistd.h>
 #include <sys/resource.h>
@@ -408,16 +409,18 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
  * Distance Query
  * */
 
-#ifndef WIN32
+/*#ifndef WIN32
        getrusage(RUSAGE_SELF,&myTime_query_begin);
-#endif
+#endif*/
+       Time_dquery-=get_micro_time();
         
        double distance_return=distance_query_geo(*geonodevector[qindex1], *geonodevector[qindex2]); 
        std::cout<<"distance_return:"<<distance_return<<std::endl;
-#ifndef WIN32
+/*#ifndef WIN32
        getrusage(RUSAGE_SELF,&myTime_query_end);
        Time_dquery+=(myTime_query_end.ru_utime.tv_usec-myTime_query_begin.ru_utime.tv_usec)/1000.0;
-#endif
+#endif*/
+       Time_dquery+=get_micro_time();
        if(distance_return == 0) continue;
        double realdistance;
        realdistance=distance_geo(*geonodevector[qindex1],*geonodevector[qindex2],algorithm);
@@ -463,17 +466,14 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
            qindex2=(qindex2+1)%geonodevector.size();
        }*/
    //    k_closest_pairs(v1,v2,k);
-#ifndef WIN32
-       getrusage(RUSAGE_SELF,&myTime_query_end);
 //       Time_clpquery+=myTime_query_end.ru_utime.tv_usec-myTime_query_begin.ru_utime.tv_usec;
-#endif
        }
        errorbound_dis/=qtimes;
        Time_dquery/=qtimes;
 //       errorbound_knn/=qtimes;
 
-       std::ofstream disquerytime(std::string(prefix) + "_SE-naive.txt", std::ios::out | std::ios::app );
-        disquerytime << 2.0/s << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
+       std::ofstream disquerytime("SE-naive.txt", std::ios::out | std::ios::app );
+        disquerytime << 2.0/s << " " << num_poi << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
      //  fp=fopen("output.txt","a");
     //  fprintf(fp,"%f %f %f %f %f %f %f %f\n",Time_preprocess,Time_dquery, Time_knnquery, Time_clpquery, Space_preprocess, Space_query, errorbound_dis, errorbound_knn); 
 //       fclose(fp); 
@@ -494,7 +494,7 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-    s = atof(argv[2]);
+    s = atoi(argv[2]);
 	bool success = geodesic::read_mesh_from_file(argv[1],points,faces);
 	if(!success)
 	{
