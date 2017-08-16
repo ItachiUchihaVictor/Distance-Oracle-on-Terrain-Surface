@@ -1,4 +1,5 @@
 #include "distance.h"
+#include<iomanip>
 #include<sstream>
 #include<unistd.h>
 #include <sys/resource.h>
@@ -18,6 +19,7 @@ int clpsize=6;
 int algo_type=0;
 int k=3;
 int i;
+std::vector<double> xcor, ycor;
 int x[upper_poi];
 FILE *fp;
 char prefix[255];
@@ -320,6 +322,7 @@ void algo_3(geodesic::GeodesicAlgorithmExact &algorithm){
 
 void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
         std::vector<GeoNode*> AllPOI;
+        double p2ptime=0;
         AllPOI.clear();
         std::vector<std::pair<int, GeoNode*> > POIs;
         POIs.clear(); 
@@ -396,11 +399,23 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
                std::cout<<*bite;
            std::cout<<std::endl;
        }*/
-       for(int q=0;q<qtimes;q++){
-           double posX1 = mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
-           double posY1 = mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
-           double posX2 = mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
-           double posY2 = mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
+            double posX1;// = mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
+            double posY1;// = mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
+            double posX2;// = mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
+            double posY2;// = mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
+       for(int q=0;q<2*qtimes;q++){
+           if(q<qtimes){
+            posX1 = mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
+            posY1 = mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
+            posX2 = mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
+            posY2 = mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
+           }
+           else{
+            posX1 = xcor[rand()*rand()%xcor.size()]; //mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
+            posY1 = ycor[rand()*rand()%ycor.size()]; //mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
+            posX2 = xcor[rand()*rand()%xcor.size()]; //mesh.m_xmin + mesh.m_width*((double) rand())/((double) RAND_MAX); 
+            posY2 = ycor[rand()*rand()%ycor.size()]; //mesh.m_ymin + mesh.m_height*((double) rand())/((double) RAND_MAX); 
+           }
         //tml::qtree<float, int> tree(mesh.m_xmin, mesh.m_ymin, mesh.m_xmin+mesh.m_width, mesh.m_ymin+mesh.m_height);
 #ifndef WIN32
        getrusage(RUSAGE_SELF,&myTime_query_begin);
@@ -438,7 +453,8 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
        std::cout<<"distance_return:"<<distance_return<<std::endl;
 #ifndef WIN32
        getrusage(RUSAGE_SELF,&myTime_query_end);
-       Time_dquery+=myTime_query_end.ru_utime.tv_usec-myTime_query_begin.ru_utime.tv_usec;
+       if(q<qtimes)Time_dquery+=myTime_query_end.ru_utime.tv_usec-myTime_query_begin.ru_utime.tv_usec;
+       else p2ptime+=myTime_query_end.ru_utime.tv_usec-myTime_query_begin.ru_utime.tv_usec;
 #endif
        double realdistance;
        realdistance=distance_geo(*geonodevector[qindex1],*geonodevector[qindex2],algorithm);
@@ -491,12 +507,14 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
        }
        errorbound_dis/=qtimes;
        Time_dquery/=qtimes;
+       p2ptime/=qtimes;
+       
     //   errorbound_knn/=qtimes;
 //       fp=fopen("output.txt","a");
 //      fprintf(fp,"%f %f %f %f %f %f %f %f\n",Time_preprocess,Time_dquery, Space_query, errorbound_dis); 
 //       fclose(fp); 
-       std::ofstream disquerytime(std::string(prefix) + ".txt", std::ios::out | std::ios::app );
-        disquerytime << 2.0/s << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
+       std::ofstream disquerytime("SE.txt", std::ios::out | std::ios::app );
+        disquerytime << 2.0/s << " " << xcor.size() << " "  << Time_preprocess << " " << std::setprecision(10)  << p2ptime << " " << Space_query << " " << errorbound_dis << " " << std::setprecision(10) << Time_dquery << std::endl; 
         DeleteGeoTree(rootGeo);
 }
 /*-------------------------------------------------------------------------
@@ -524,9 +542,18 @@ int main(int argc, char **argv)
     s = atof(argv[2]);
 	mesh.initialize_mesh_data(points, faces);		//create internal mesh data structure including edges
     strcpy(prefix, argv[1]);
+    std::ifstream points(argv[3], std::ios::in);
 
     geodesic::GeodesicAlgorithmExact algorithm(&mesh);	//create exact algorithm for the mesh
     std::cout << s << std::endl;
+    while(!points.eof()){
+        double xx, yy;
+        points >> xx >> yy;
+//        std::cout << xx << " " << yy << std::endl;
+        if(points.eof()) break;
+        xcor.push_back(xx);
+        ycor.push_back(yy);
+    }
 	//geodesic::GeodesicAlgorithmSubdivision subdivision_algorithm(&mesh,2);	//with subdivision_level=0 this algorithm becomes Dijkstra, with subdivision_level->infinity it becomes exact
     // WRITE THE RANDOM POINT FILE 
 /*    fp = fopen("POINT.C","w");
