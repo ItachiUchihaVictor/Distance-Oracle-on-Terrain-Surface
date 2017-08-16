@@ -473,8 +473,8 @@ void algo_4(geodesic::GeodesicAlgorithmExact &algorithm){
 //       fp=fopen("output.txt","a");
 //      fprintf(fp,"%f %f %f %f %f %f %f %f\n",Time_preprocess,Time_dquery, Space_query, errorbound_dis); 
 //       fclose(fp); 
-       std::ofstream disquerytime(std::string(prefix) + ".txt", std::ios::out | std::ios::app );
-        disquerytime << 2.0/s << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
+       std::ofstream disquerytime("SE.txt", std::ios::out | std::ios::app );
+        disquerytime << 2.0/s << " " << mesh.vertices().size() << " "  << Time_preprocess << " "  <<  Time_dquery << " " << Space_query << " " << errorbound_dis << std::endl; 
         DeleteGeoTree(rootGeo);
 }
 /*-------------------------------------------------------------------------
