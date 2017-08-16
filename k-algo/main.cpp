@@ -178,8 +178,8 @@ void mano(geodesic::GeodesicAlgorithmExact &algorithm, geodesic::GeodesicAlgorit
 //       fp=fopen("output.txt","a");
 //      fprintf(fp,"%f %f %f %f %f %f %f %f\n",Time_preprocess,Time_dquery, Space_query, errorbound_dis); 
 //       fclose(fp); 
-       std::ofstream disquerytime(std::string(prefix) + "_mano.txt", std::ios::out | std::ios::app );
-        disquerytime << eps << " "  <<  Time_dquery << " " << errorbound_dis << std::endl; 
+       std::ofstream disquerytime("mano.txt", std::ios::out | std::ios::app );
+        disquerytime << eps << " " << num_poi << " " << mesh.vertices().size() << " "  <<  Time_dquery << " " << errorbound_dis << std::endl; 
 }
 /*-------------------------------------------------------------------------
  * ------------------------MAIN--------------------------------------------
