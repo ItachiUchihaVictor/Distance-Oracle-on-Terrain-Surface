@@ -18,7 +18,7 @@ e = 0.05 <=> s = 40
 
 e = 0.1 <=> s = 20
 
-e = 0.15 <=> s = 16
+e = 0.15 <=> s = 13
 
 e = 0.2 <=> s = 10
 
@@ -40,9 +40,8 @@ the number of POIs
 
 # Experimental Result
 
-The program will save result in a file "data-file-name_SE-naive.txt". 
+The program will save result in a file "SE-naive.txt". 
 
-The result contains "error bound" "preprocessing time (seconds)" "query time (mini seconds)" "space (MB)" "error". 
+The result contains "error bound" "# of POIs" "preprocessing time (seconds)" "query time (mini seconds)" "space (MB)" "error". 
 
-In the aforementioned example, the result file is "small_terrain.off_SE-naive.txt".
 
