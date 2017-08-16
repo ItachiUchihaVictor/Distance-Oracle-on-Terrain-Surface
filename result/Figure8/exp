@@ -1,0 +1,28 @@
+#!/bin/bash
+rm *.txt
+cp ../../dataset/small/poilist.txt ./
+../../P2P/p2p ../../dataset/small/small_with_poi.off 8
+../../P2P/p2p ../../dataset/small/small_with_poi.off 10
+../../P2P/p2p ../../dataset/small/small_with_poi.off 13
+../../P2P/p2p ../../dataset/small/small_with_poi.off 20
+../../P2P/p2p ../../dataset/small/small_with_poi.off 40
+../../k-algo/k-algo ../../dataset/small/small_with_poi.off 0.25 0
+../../k-algo/k-algo ../../dataset/small/small_with_poi.off 0.2 0
+../../k-algo/k-algo ../../dataset/small/small_with_poi.off 0.15 0
+../../k-algo/k-algo ../../dataset/small/small_with_poi.off 0.1 0
+../../k-algo/k-algo ../../dataset/small/small_with_poi.off 0.05 0
+../../SE-naive/se-naive ../../dataset/small/small_with_poi.off 8 
+../../SE-naive/se-naive ../../dataset/small/small_with_poi.off 10 
+../../SE-naive/se-naive ../../dataset/small/small_with_poi.off 13 
+../../SE-naive/se-naive ../../dataset/small/small_with_poi.off 20 
+../../SE-naive/se-naive ../../dataset/small/small_with_poi.off 40 
+../../greedy/greedy ../../dataset/small/small_with_poi.off 8 
+../../greedy/greedy ../../dataset/small/small_with_poi.off 10 
+../../greedy/greedy ../../dataset/small/small_with_poi.off 13 
+../../greedy/greedy ../../dataset/small/small_with_poi.off 20 
+../../greedy/greedy ../../dataset/small/small_with_poi.off 40 
+../../SP-Oracle/sp-oracle ../../dataset/small/small_with_poi.off 0.25 0
+../../SP-Oracle/sp-oracle ../../dataset/small/small_with_poi.off 0.2 0
+../../SP-Oracle/sp-oracle ../../dataset/small/small_with_poi.off 0.15 0
+../../SP-Oracle/sp-oracle ../../dataset/small/small_with_poi.off 0.1 0
+../../SP-Oracle/sp-oracle ../../dataset/small/small_with_poi.off 0.05 0
