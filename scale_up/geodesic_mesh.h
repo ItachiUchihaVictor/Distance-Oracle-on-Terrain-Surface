@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
+#include<iomanip>
 
 #include "geodesic_mesh_elements.h"
 #include "geodesic_memory.h"
@@ -185,7 +186,7 @@ void Mesh::initialize_mesh_data(unsigned num_vertices,
             << 3 * num_faces << " "
             << m_edges.size() + 3*num_faces << std::endl;
 
-        for(unsigned i=0;i<num_vertices;i++)newterrain << m_vertices[i].getx() << " " << m_vertices[i].gety() << " " << m_vertices[i].getz() << std::endl;
+        for(unsigned i=0;i<num_vertices;i++)newterrain << std::setprecision(10) << m_vertices[i].getx() << " " << std::setprecision(10) << m_vertices[i].gety() << " " << std::setprecision(10) << m_vertices[i].getz() << std::endl;
         for(unsigned i=0;i<v1.size();i++)newterrain << v1[i] << " " << v2[i] << " " << v3[i] << std::endl;
 
         for(unsigned i=0;i<3*num_faces;i++)newterrain << "3 " << f1[i] << " " << f2[i] << " " << f3[i] << std::endl;
