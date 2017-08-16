@@ -18,7 +18,7 @@ e = 0.05 <=> s = 40
 
 e = 0.1 <=> s = 20
 
-e = 0.15 <=> s = 16
+e = 0.15 <=> s = 13
 
 e = 0.2 <=> s = 10
 
@@ -32,8 +32,6 @@ In this example, samll_terrain.off is the terrain data file and 8 is the separat
 
 # Experimental Result
 
-The program will save result in a file "data-file-name.txt". 
+The program will save result in a file "SE.txt". 
 
-The result contains "error bound" "preprocessing time (seconds)" "query time (micor seconds)" "space (MB)" "error". 
-
-In the aforementioned example, the result file is "small_terrain.off.txt".
+The result contains "error bound" "# of vertices on terrain surface" "preprocessing time (seconds)" "query time (micor seconds)" "space (MB)" "error". 
