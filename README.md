@@ -46,6 +46,7 @@ ID_of_the_1st_vertex_of_the_2nd_face ID_of_the_2nd_vertex_of_the_2nd_face ID_of_
 
 ID_of_the_1st_vertex_of_the_last_face ID_of_the_2nd_vertex_of_the_last_face ID_of_the_3td_vertex_of_the_last_face
 
+Each .off data could be visualized by the terrain tool (http://rwcpu1.cse.ust.hk/terrain/).
 
 # How to Perform Experiment
 
