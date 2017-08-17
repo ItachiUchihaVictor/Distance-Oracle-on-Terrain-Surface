@@ -22,6 +22,31 @@ https://www.dropbox.com/s/ofa9ddk138x91w3/dataset.tar.gz?dl=0
 
 Then, unzip the file and go to the folder "dataset/" and then execute the script "preprocessing". Note that to smoothly run all experiment, the folder "dataset/" must be put under the top-most folder of this project (i.e., the top-most folder is the folder containing the script "Compile").
 
+Data Format:
+
+We used the .off format in the experiment. The content of the .off file is as follows: 
+
+OFF
+
+Number_of_vertices Number_of_faces Number_of_edges
+
+x_coordinate_of_1st_vertex y_coordinate_of_1st_vertex z_coordinate_of_1st_vertex
+
+x_coordinate_of_2nd_vertex y_coordinate_of_2nd_vertex z_coordinate_of_2nd_vertex
+
+......
+
+x_coordinate_of_the_last_vertex y_coordinate_of_the_last_vertex z_coordinate_of_the_last_vertex
+
+ID_of_the_1st_vertex_of_the_1st_face ID_of_the_2nd_vertex_of_the_1st_face ID_of_the_3td_vertex_of_the_1st_face
+
+ID_of_the_1st_vertex_of_the_2nd_face ID_of_the_2nd_vertex_of_the_2nd_face ID_of_the_3td_vertex_of_the_2nd_face
+
+......
+
+ID_of_the_1st_vertex_of_the_last_face ID_of_the_2nd_vertex_of_the_last_face ID_of_the_3td_vertex_of_the_last_face
+
+
 # How to Perform Experiment
 
 Under the folder "result", for each experimental figure in our paper, there is a sub-folder named after the name of the corresponding experimental figure, e.g. "Figure8/". In each sub-folder, there is a README.md which tells you how to perform the corresponding experiment. 
