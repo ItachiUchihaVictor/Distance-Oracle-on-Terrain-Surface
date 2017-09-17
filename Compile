@@ -1,0 +1,22 @@
+#!/bin/bash
+cd P2P/
+g++4 -o p2p main.cpp -std=c++11
+cd ../A2A/
+g++4 -o a2a main.cpp -std=c++11
+cd ../V2V/
+g++4 -o v2v main.cpp -std=c++11
+cd ../SE-naive/
+g++4 -o se-naive main.cpp -std=c++11
+cd ../greedy/
+g++4 -o greedy main.cpp -std=c++11
+cd ../poiInsertion/
+g++4 -o poiinsertion main.cpp -std=c++11
+cd ../generate_poi/
+g++4 -o generate_poi main.cpp -std=c++11
+cd ../scale_up/
+g++4 -o scale main.cpp -std=c++11
+cd ../k-algo/
+g++4 -o k-algo main.cpp -std=c++11
+cd ../SP-Oracle/
+g++4 -o sp-oracle main.cpp -std=c++11
+cd ..
