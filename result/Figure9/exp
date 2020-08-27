@@ -23,5 +23,5 @@ rm *.txt
 ../../generate_poi/generate_poi ../../dataset/SF_low/SF_low.off ../../dataset/SF_low/SF.txt 180000
 ../../poiInsertion/poiinsertion ../../dataset/SF_low/SF_low.off 180000.txt ../../dataset/SF_low/SF_low_with_poi.off poilist.txt
 ../../P2P/p2p ../../dataset/SF_low/SF_low.off 10
-../../k-algo/k-algo ../../dataset/SF_low/SF_low.off 0.2 2
-../../SP-Oracle/sp-oracle ../../dataset/SF_low/SF_low.off 0.2 2
+../../k-algo/k-algo ../../dataset/SF_low/SF_low.off 0.2 0
+../../SP-Oracle/sp-oracle ../../dataset/SF_low/SF_low.off 0.2 0
