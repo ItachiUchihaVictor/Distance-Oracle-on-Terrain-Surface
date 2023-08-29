@@ -18,7 +18,7 @@ Execute the script "Compile".
 
 First download the file through the following link:
 
-https://www.dropbox.com/s/ofa9ddk138x91w3/dataset.tar.gz?dl=0
+[https://www.dropbox.com/s/ofa9ddk138x91w3/dataset.tar.gz?dl=0](https://www.dropbox.com/scl/fi/ykutpuruep1996i1gx51k/TerrainDataset.zip?rlkey=9mm5b0qy4o59s5isx7vj49jts&dl=0)
 
 Then, unzip the file and go to the folder "dataset/" and then execute the script "preprocessing". Note that to smoothly run all experiment, the folder "dataset/" must be put under the top-most folder of this project (i.e., the top-most folder is the folder containing the script "Compile").
 
