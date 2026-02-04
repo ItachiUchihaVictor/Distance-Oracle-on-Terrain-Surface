@@ -1,0 +1,18 @@
+#!/bin/bash
+rm *.txt
+../../generate_poi/generate_poi ../../dataset/BH_low/BH_low.off ../../dataset/BH_low/BH.txt 1000000
+../../A2A/a2a ../../dataset/BH_low/BH_low.off 8 1000000.txt
+../../A2A/a2a ../../dataset/BH_low/BH_low.off 10 1000000.txt
+../../A2A/a2a ../../dataset/BH_low/BH_low.off 13 1000000.txt
+../../A2A/a2a ../../dataset/BH_low/BH_low.off 20 1000000.txt
+../../A2A/a2a ../../dataset/BH_low/BH_low.off 40 1000000.txt
+../../k-algo/k-algo ../../dataset/BH_low/BH_low.off 0.25 2
+../../k-algo/k-algo ../../dataset/BH_low/BH_low.off 0.2 2
+../../k-algo/k-algo ../../dataset/BH_low/BH_low.off 0.15 2
+../../k-algo/k-algo ../../dataset/BH_low/BH_low.off 0.1 2
+../../k-algo/k-algo ../../dataset/BH_low/BH_low.off 0.05 2
+../../SP-Oracle/sp-oracle ../../dataset/BH_low/BH_low.off 0.25 2
+../../SP-Oracle/sp-oracle ../../dataset/BH_low/BH_low.off 0.2 2
+../../SP-Oracle/sp-oracle ../../dataset/BH_low/BH_low.off 0.15 2
+../../SP-Oracle/sp-oracle ../../dataset/BH_low/BH_low.off 0.1 2
+../../SP-Oracle/sp-oracle ../../dataset/BH_low/BH_low.off 0.05 2

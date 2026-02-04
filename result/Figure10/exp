@@ -1,0 +1,22 @@
+#!/bin/bash
+rm *.txt
+../../poiInsertion/poiinsertion 0.5M.off ../../dataset/BH_high/BH.txt 0.5M_with_poi.off poilist.txt
+../../P2P/p2p 0.5M_with_poi.off 10
+../../k-algo/k-algo 0.5M_with_poi.off 0.2 0
+../../SP-Oracle/sp-oracle 0.5M_with_poi.off 0.2 0
+../../poiInsertion/poiinsertion 1M.off ../../dataset/BH_high/BH.txt 1M_with_poi.off poilist.txt
+../../P2P/p2p 1M_with_poi.off 10
+../../k-algo/k-algo 1M_with_poi.off 0.2 0
+../../SP-Oracle/sp-oracle 1M_with_poi.off 0.2 0
+../../poiInsertion/poiinsertion 1.5M.off ../../dataset/BH_high/BH.txt 1.5M_with_poi.off poilist.txt
+../../P2P/p2p 1.5M_with_poi.off 10
+../../k-algo/k-algo 1.5M_with_poi.off 0.2 0
+../../SP-Oracle/sp-oracle 1.5M_with_poi.off 0.2 0
+../../poiInsertion/poiinsertion 2M.off ../../dataset/BH_high/BH.txt 2M_with_poi.off poilist.txt
+../../P2P/p2p 2M_with_poi.off 10
+../../k-algo/k-algo 2M_with_poi.off 0.2 0
+../../SP-Oracle/sp-oracle 2M_with_poi.off 0.2 0
+../../poiInsertion/poiinsertion 2.5M.off ../../dataset/BH_high/BH.txt 2.5M_with_poi.off poilist.txt
+../../P2P/p2p 2.5M_with_poi.off 10 
+../../k-algo/k-algo 2.5M_with_poi.off 0.2 0
+../../SP-Oracle/sp-oracle 2.5M_with_poi.off 0.2 0

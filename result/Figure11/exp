@@ -1,0 +1,17 @@
+#!/bin/bash
+rm *.txt
+../../V2V/v2v 60k.off 10
+../../k-algo/k-algo 60k.off 0.2 1
+../../SP-Oracle/sp-oracle 60k.off 0.2 1
+../../V2V/v2v 90k.off 10
+../../k-algo/k-algo 90k.off 0.2 1
+../../SP-Oracle/sp-oracle 90k.off 0.2 1
+../../V2V/v2v 120k.off 10
+../../k-algo/k-algo 120k.off 0.2 1
+../../SP-Oracle/sp-oracle 120k.off 0.2 1
+../../V2V/v2v 150k.off 10
+../../k-algo/k-algo 150k.off 0.2 1
+../../SP-Oracle/sp-oracle 150k.off 0.2 1
+../../V2V/v2v 180k.off 10
+../../k-algo/k-algo 180k.off 0.2 1
+../../SP-Oracle/sp-oracle 180k.off 0.2 1

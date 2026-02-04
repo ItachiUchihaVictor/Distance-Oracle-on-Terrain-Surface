@@ -1,0 +1,13 @@
+#!/bin/bash
+rm *.txt
+cp ../../dataset/BH_high/poilist.txt ./
+../../P2P/p2p ../../dataset/BH_high/BH_high_with_poi.off 8
+../../P2P/p2p ../../dataset/BH_high/BH_high_with_poi.off 10
+../../P2P/p2p ../../dataset/BH_high/BH_high_with_poi.off 13
+../../P2P/p2p ../../dataset/BH_high/BH_high_with_poi.off 20
+../../P2P/p2p ../../dataset/BH_high/BH_high_with_poi.off 40
+../../k-algo/k-algo ../../dataset/BH_high/BH_high_with_poi.off 0.25 0
+../../k-algo/k-algo ../../dataset/BH_high/BH_high_with_poi.off 0.2 0
+../../k-algo/k-algo ../../dataset/BH_high/BH_high_with_poi.off 0.15 0
+../../k-algo/k-algo ../../dataset/BH_high/BH_high_with_poi.off 0.1 0
+../../k-algo/k-algo ../../dataset/BH_high/BH_high_with_poi.off 0.05 0
