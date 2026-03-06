@@ -1,18 +1,13 @@
 # Distance-Oracle-on-Terrain-Surface
 
-The project provides the implementation of the distance oracle on terrain surface stated in Reference. Please kindly cite the paper in the Reference if you used our code. 
+Please find our most updated implementations of this algorithm (SE-Oracle) in this repository (https://github.com/ItakEjgo/weighted_distance_oracle). Please kindly cite the paper in the Reference if you used our code. 
 
-There are three different types of distance queries on terrain surface, namely Vertex-to-Vertex (V2V) distance queries, Point-to-Point (P2P) distance queries and Arbitrary Point-to-Arbitrary Point (A2A) distance queries. We refer the readers to the paper in Reference for more details. 
+There are three different types of distance queries on terrain surface, namely Vertex-to-Vertex (V2V) distance queries, Point-to-Point (P2P) distance queries and Arbitrary Point-to-Arbitrary Point (A2A) distance queries. We refer the readers to the paper in Reference for more details. Note that in the repository above, the default setting is A2A query and please feel free to modify the code a bit if you need P2P or V2V queries. 
 
-There are three sub-projects on V2V, P2P and A2A distance quereis, respectively. Besides, there is another sub-project "poiInsertion" for inserting Point-of-Interest (POIs) into a terrain surface and another sub-project "scale_up" for scale the size of the terrain up by inserting a vertex at the center of each face (as stated in the experiment of the paper). There are also some other sub-projects and we refer the readers to our paper for the details.
 
 # Reference
 
 "Distance Oracle on Terrain Surface", Victor Junqiu Wei, Raymond Chi-Wing Wong, Cheng Long, David M. Mount. SIGMOD 2017, Chicago, USA.
-
-# How to Compile the Code 
-
-Execute the script "Compile".
 
 # How to Prepare the Datasets
 
