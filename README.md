@@ -1,6 +1,6 @@
 # Distance-Oracle-on-Terrain-Surface
 
-Please find our most updated implementations of this algorithm (SE-Oracle) in this repository (https://github.com/ItakEjgo/weighted_distance_oracle). Please kindly cite the paper in the Reference if you used our code. 
+Please find our most updated implementations of this algorithm (SE-Oracle) in this repository (https://github.com/ItakEjgo/weighted_distance_oracle). 
 
 There are three different types of distance queries on terrain surface, namely Vertex-to-Vertex (V2V) distance queries, Point-to-Point (P2P) distance queries and Arbitrary Point-to-Arbitrary Point (A2A) distance queries. We refer the readers to the paper in Reference for more details. Note that in the repository above, the default setting is A2A query and please feel free to modify the code a bit if you need P2P or V2V queries. 
 
