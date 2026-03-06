@@ -1,6 +1,6 @@
 # Distance-Oracle-on-Terrain-Surface
 
-Please find our most updated implementations of this algorithm (SE-Oracle) in this repository: 
+Please find our most updated implementation of this algorithm (SE-Oracle) in the repository: 
 
 https://github.com/ItakEjgo/weighted_distance_oracle
 
